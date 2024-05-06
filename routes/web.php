@@ -4,6 +4,10 @@ use App\Http\Controllers\PasportController;
 use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
 
+
+Route::get('/',function (){
+    return redirect()->route('task.index');
+});
 Route::get('login',[PasportController::class,'index'])->name('login');
 Route::post('login',[PasportController::class,'login'])->name('login');
 Route::get('registration',[PasportController::class,'register'])->name('register');

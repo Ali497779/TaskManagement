@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ChattController;
 use App\Http\Controllers\PasportController;
 use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
@@ -21,5 +22,11 @@ Route::group(['prefix'=>'task','middleware'=>'auth','as'=>'task.'],function (){
     Route::post('/update/{id}',[TaskController::class,'update'])->name('update');
     Route::post('/taskupdate',[TaskController::class,'taskupdate'])->name('taskupdate');
     Route::get('/delete/{id}',[TaskController::class,'destroy'])->name('delete');
+});
+
+Route::group(['prefix'=>'chatt','middleware'=>'auth','as'=>'chatt.'], function () {
+    Route::get('/', [ChattController::class, 'index'])->name('index');
+    Route::post('/broadcast', [ChattController::class, 'broadcast'])->name('broadcast');
+    Route::post('/receive', [ChattController::class, 'receive'])->name('receive');
 });
 

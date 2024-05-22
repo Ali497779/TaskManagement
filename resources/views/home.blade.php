@@ -209,7 +209,6 @@
             });
           });
         });
-
         // Filter Ajax
         $(document).ready(function(){
             $('#filter-form').submit(function(event){

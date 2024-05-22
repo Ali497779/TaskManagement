@@ -34,6 +34,10 @@
                     <i class="ion-ios-person-outline"></i>
                     <span>My Tasks</span>
                 </a></li>
+                <li class=""><a href="{{route('chatt.index')}}">
+                    <i class="ion-ios-person-outline"></i>
+                    <span>Chatt System</span>
+                </a></li>
 
         </ul>
     </div>
